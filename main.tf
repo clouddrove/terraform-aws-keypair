@@ -1,11 +1,12 @@
 ## Managed By : CloudDrove
+##Description : This Script is used to create Key Pair.
 ## Copyright @ CloudDrove. All Right Reserved.
 
 #Module      : KEY PAIR
-#Description : Provides an EC2 key pair resource.
-#              A key pair is used to control login access to EC2 instances.
+#Description : Terraform module for generating or importing an SSH public key file into AWS.
 resource "aws_key_pair" "default" {
-  count      = "${var.create_key_pair ? 1 : 0}"
-  key_name   = "${var.key_name}"
-  public_key = "${var.key}"
+  count = var.enable_key_pair == true ? 1 : 0
+
+  key_name   = var.key_name
+  public_key = file(var.key_path)
 }

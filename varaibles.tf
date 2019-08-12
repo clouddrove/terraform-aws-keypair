@@ -1,14 +1,18 @@
-variable "key" {
-  description = "Name  (e.g. `~/.ssh/id_rsa.pub` or `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`)"
-  type        = "string"
-}
+variable "key_path" {
+  type        = string
+  default     = ""
+  description = "Name  (e.g. `~/.ssh/id_rsa.pub` or `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`)."
 
+}
 variable "key_name" {
-  description = "Name  (e.g. `it-admin` or `devops`)"
-  type        = "string"
-}
+  type        = string
+  default     = ""
+  description = "Name  (e.g. `it-admin` or `devops`)."
 
-variable "create_key_pair" {
-  description = "Do you want to create key pair ? "
-  default     = false
+}
+variable "enable_key_pair" {
+  type        = bool
+  default     = true
+  description = "A boolean flag to enable/disable key pair."
+
 }
