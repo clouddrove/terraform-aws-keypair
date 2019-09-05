@@ -70,7 +70,7 @@ This module has a few dependencies:
 Here is an example of how you can use this module in your inventory structure:
 ```hcl
     module "keypair" {
-      source          = "git::https://github.com/clouddrove/terraform-aws-keypair.git"
+      source          = "git::https://github.com/clouddrove/terraform-aws-keypair.git?ref=tags/0.12.1"
       key             = "~/.ssh/id_rsa.pub"
       key_name        = "devops"
       enable_key_pair = true
