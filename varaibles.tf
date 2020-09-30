@@ -23,8 +23,8 @@ variable "enable_key_pair" {
   description = "A boolean flag to enable/disable key pair."
 
 }
-variable "Tags"{
-    type        = map(string)
-    default     ={"FirstKey": "Env","SecondKey": "Prod"}
-    description = "A tag is a custom label that you assign to an AWS resource. You can use tags to help organize and identify your key pairs."
+variable "Tags" {
+  type        = map(string)
+  default     = { "FirstKey" : "Env", "SecondKey" : "Prod" }
+  description = "A tag is a custom label that you assign to an AWS resource. You can use tags to help organize and identify your key pairs."
 }

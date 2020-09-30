@@ -5,7 +5,7 @@
     Terraform AWS Keypair
 </h1>
 
-<p align="center" style="font-size: 1.2rem;"> 
+<p align="center" style="font-size: 1.2rem;">
     Terraform module for generating or importing an SSH public key file into AWS.
      </p>
 
@@ -41,7 +41,7 @@
 
 ## Prerequisites
 
-This module has a few dependencies: 
+This module has a few dependencies:
 
 
 
@@ -89,7 +89,7 @@ Here is an example of how you can use this module in your inventory structure:
 
 
 
-## Feedback 
+## Feedback
 If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/clouddrove/terraform-aws-keypair/issues), or feel free to drop us an email at [hello@clouddrove.com](mailto:hello@clouddrove.com).
 
 If you have found it worth your time, go ahead and give us a ★ on [our GitHub](https://github.com/clouddrove/terraform-aws-keypair)!
