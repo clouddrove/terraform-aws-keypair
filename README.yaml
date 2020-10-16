@@ -37,8 +37,9 @@ usage: |-
   Here is an example of how you can use this module in your inventory structure:
   ```hcl
       module "keypair" {
-        source          = "git::https://github.com/clouddrove/terraform-aws-keypair.git?ref=tags/0.13.0"
-        key             = "~/.ssh/id_rsa.pub"
+        source          = "clouddrove/keypair/aws"
+        version         = "0.13.0"
+        public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
         key_name        = "devops"
         enable_key_pair = true
       }
