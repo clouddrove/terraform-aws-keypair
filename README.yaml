@@ -16,7 +16,7 @@ github_repo: clouddrove/terraform-aws-keypair
 # Badges to display
 badges:
   - name: "Terraform"
-    image: "https://img.shields.io/badge/Terraform-v0.13-green"
+    image: "https://img.shields.io/badge/Terraform-v0.14-green"
     url: "https://www.terraform.io"
   - name: "Licence"
     image: "https://img.shields.io/badge/License-MIT-blue.svg"
@@ -38,7 +38,7 @@ usage: |-
   ```hcl
       module "keypair" {
         source          = "clouddrove/keypair/aws"
-        version         = "0.13.0"
+        version         = "0.14.0"
         public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
         key_name        = "devops"
         enable_key_pair = true

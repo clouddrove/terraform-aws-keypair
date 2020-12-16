@@ -2,6 +2,7 @@ variable "public_key" {
   type        = string
   default     = ""
   description = "Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`)."
+  sensitive   = true
 }
 
 variable "key_path" {
@@ -22,6 +23,17 @@ variable "enable_key_pair" {
   default     = true
   description = "A boolean flag to enable/disable key pair."
 
+}
+variable "repository" {
+  type        = string
+  default     = ""
+  description = "Terraform current module repo"
+
+  validation {
+    # regex(...) fails if it cannot find a match
+    condition     = can(regex("^https://", var.repository))
+    error_message = "The module-repo value must be a valid Git repo link."
+  }
 }
 
 variable "environment" {
@@ -49,6 +61,6 @@ variable "name" {
 
 variable "managedby" {
   type        = string
-  default     = "anmol@clouddrove.com"
-  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'."
+  default     = "hello@clouddrove.com"
+  description = "ManagedBy, eg 'CloudDrove'."
 }
