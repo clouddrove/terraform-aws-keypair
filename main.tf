@@ -6,7 +6,7 @@
 #Description : Terraform module for generating or importing an SSH public key file into AWS.
 
 module "labels" {
-  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=CD-200"
+  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=0.14"
 
   name        = var.name
   environment = var.environment
