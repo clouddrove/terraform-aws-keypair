@@ -14,7 +14,6 @@ module "labels" {
   repository  = var.repository
   label_order = var.label_order
   managedby   = var.managedby
-  enabled     = var.enable_key_pair
 }
 
 #Module      : KEY PAIR
@@ -22,7 +21,7 @@ module "labels" {
 resource "aws_key_pair" "default" {
   count = var.enable_key_pair == true ? 1 : 0
 
-  key_name   = var.key_name
+  key_name   = module.labels.id
   public_key = var.public_key == "" ? file(var.key_path) : var.public_key
   tags       = module.labels.tags
 }
