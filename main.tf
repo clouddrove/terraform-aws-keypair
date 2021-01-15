@@ -2,11 +2,12 @@
 ##Description : This Script is used to create Key Pair.
 ## Copyright @ CloudDrove. All Right Reserved.
 
-#Module      : KEY PAIR
-#Description : Terraform module for generating or importing an SSH public key file into AWS.
-
+#Module      : labels
+#Description : This terraform module is designed to generate consistent label names and tags
+#              for resources. You can use terraform-labels to implement a strict naming
+#              convention.
 module "labels" {
-  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=0.14"
+  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.14.0"
 
   name        = var.name
   environment = var.environment
@@ -16,8 +17,8 @@ module "labels" {
   enabled     = var.enable_key_pair
 }
 
-
-
+#Module      : KEY PAIR
+#Description : Terraform module for generating or importing an SSH public key file into AWS.
 resource "aws_key_pair" "default" {
   count = var.enable_key_pair == true ? 1 : 0
 
