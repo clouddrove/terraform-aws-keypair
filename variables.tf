@@ -67,5 +67,4 @@ variable "enable_key_pair" {
   type        = bool
   default     = true
   description = "A boolean flag to enable/disable key pair."
-
 }
