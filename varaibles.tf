@@ -61,7 +61,6 @@ variable "key_name" {
   type        = string
   default     = ""
   description = "Name  (e.g. `it-admin` or `devops`)."
-
 }
 
 variable "enable_key_pair" {
