@@ -28,5 +28,5 @@ func Test(t *testing.T) {
 	name := terraform.OutputList(t, terraformOptions, "name")
 
 	// Check that we get back the outputs that we expect
-	assert.Equal(t, "devops", name[0])
+	assert.Equal(t, "key-test", name[0])
 }
