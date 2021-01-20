@@ -14,7 +14,7 @@
 <p align="center">
 
 <a href="https://www.terraform.io">
-  <img src="https://img.shields.io/badge/Terraform-v0.13-green" alt="Terraform">
+  <img src="https://img.shields.io/badge/Terraform-v0.14-green" alt="Terraform">
 </a>
 <a href="LICENSE.md">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="Licence">
@@ -73,10 +73,9 @@ Here is an example of how you can use this module in your inventory structure:
 ```hcl
     module "keypair" {
       source          = "clouddrove/keypair/aws"
-      version         = "0.13.0"
-      public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
-      key_name        = "devops"
+      version         = "0.14.0"
       enable_key_pair = true
+      public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
     }
 ```
 
@@ -89,15 +88,17 @@ Here is an example of how you can use this module in your inventory structure:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| application | Application (e.g. `cd` or `clouddrove`). | `string` | `""` | no |
+| attributes | Additional attributes (e.g. `1`). | `list(string)` | `[]` | no |
 | enable\_key\_pair | A boolean flag to enable/disable key pair. | `bool` | `true` | no |
-| environment | Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT' | `string` | n/a | yes |
+| environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | key\_name | Name  (e.g. `it-admin` or `devops`). | `string` | `""` | no |
 | key\_path | Name  (e.g. `~/.ssh/id_rsa.pub`). | `string` | `""` | no |
-| label\_order | Label order, e.g. `name`,`application`. | `list` | `[]` | no |
-| managedby | ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'. | `string` | `"anmol@clouddrove.com"` | no |
+| label\_order | label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
+| managedby | ManagedBy, eg 'CloudDrove'. | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | public\_key | Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`). | `string` | `""` | no |
+| repository | Terraform current module repo | `string` | `"https://registry.terraform.io/modules/clouddrove/keypair/aws"` | no |
+| tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
 
 ## Outputs
 
