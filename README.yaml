@@ -26,7 +26,7 @@ badges:
     url: "https://github.com/clouddrove/terraform-aws-keypair/actions/workflows/tfsec.yml"
   - name: "static-checks"
     image: "https://github.com/clouddrove/terraform-aws-keypair/actions/workflows/terraform.yml/badge.svg"
-     url: "https://github.com/clouddrove/terraform-aws-keypair/actions/workflows/terraform.yml"
+    url: "https://github.com/clouddrove/terraform-aws-keypair/actions/workflows/terraform.yml"
 #  description of this project
 description: |-
   Terraform module for generating or importing an SSH public key file into AWS.
