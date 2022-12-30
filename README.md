@@ -79,7 +79,7 @@ Here is an example of how you can use this module in your inventory structure:
 ```hcl
     module "keypair" {
       source          = "clouddrove/keypair/aws"
-      version         = "0.15.0"
+      version         = "1.3.0"
       enable_key_pair = true
       public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
     }
@@ -110,6 +110,8 @@ Here is an example of how you can use this module in your inventory structure:
 
 | Name | Description |
 |------|-------------|
+| arn | The key pair ARN. |
+| id | The key pair name. |
 | name | Name of SSH key. |
 
 
