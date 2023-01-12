@@ -16,6 +16,12 @@ jobs:
           terraform_version: 0.12.31
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
+      - name: tfsec commenter for PR
+        uses: tfsec/tfsec-pr-commenter-action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          working_directory: ./_example
+
 #jobs:
 #  tfsec:
 #    name: tfsec sarif report
