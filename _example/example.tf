@@ -15,5 +15,5 @@ module "keypair" {
   environment = "test"
   label_order = ["name", "environment"]
 
-  public_key      = "ssh-rsa AAAAB3NqWk3Bw/NgygFXz7vob9OiA/fb2T3t4R1EwEs5rUX3uD2UBm6sbGBH00ZCjTHBwKHaGvKLk4c5gHX"
+  public_key = "ssh-rsa 4R1EwEs5rUX3uD2UBm6sbGBH00ZCjTHBwk4c5gHX"
 }
