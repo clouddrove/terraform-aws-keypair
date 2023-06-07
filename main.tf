@@ -15,12 +15,24 @@ module "labels" {
 }
 
 ##----------------------------------------------------------------------------------
-## Terraform module for generating or importing an SSH public key file into AWS.
+## resource for generating or importing an SSH public key file into AWS.
 ##----------------------------------------------------------------------------------
 resource "aws_key_pair" "default" {
-  count = var.enable_key_pair == true ? 1 : 0
+  count = var.enable_key_pair ? 1 : 0
 
-  key_name   = module.labels.id
-  public_key = var.public_key == "" ? file(var.key_path) : var.public_key
-  tags       = module.labels.tags
+  key_name   = format("%s-pair", module.labels.id)
+  public_key = var.enable_key_pair == true ? trimspace(tls_private_key.default[0].public_key_openssh) : var.public_key
+
+  tags = module.labels.tags
+}
+
+##----------------------------------------------------------------------------------
+## resource for generating or importing an SSH private key file into AWS.
+##----------------------------------------------------------------------------------
+
+resource "tls_private_key" "default" {
+  count = var.enable_key_pair && var.create_private_key_enabled ? 1 : 0
+
+  algorithm = var.private_key_algorithm
+  rsa_bits  = var.private_key_rsa_bits
 }

@@ -6,6 +6,7 @@ provider "aws" {
 }
 
 ####----------------------------------------------------------------------------------
+##  Module      : KEY PAIR
 ## Provider block added, Use the Amazon Web Services (AWS) provider to interact with the many resources supported by AWS.
 ####----------------------------------------------------------------------------------
 module "keypair" {
@@ -13,7 +14,9 @@ module "keypair" {
 
   name        = "key"
   environment = "test"
-  label_order = ["name", "environment"]
+  label_order = ["environment", "name"]
 
-  public_key = "ssh-rsa 4R1EwEs5rUX3uD2UBm6sbGBH00ZCjTHBwk4c5gHX"
+  public_key                 = ""
+  create_private_key_enabled = true
+  enable_key_pair            = true
 }
