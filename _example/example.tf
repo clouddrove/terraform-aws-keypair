@@ -12,9 +12,9 @@ provider "aws" {
 module "keypair" {
   source = "./../"
 
-  name        = "key"
-  environment = "test"
-  label_order = ["environment", "name"]
+  name                       = "key"
+  environment                = "test"
+  label_order                = ["environment", "name"]
 
   public_key                 = ""
   create_private_key_enabled = true
