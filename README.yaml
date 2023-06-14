@@ -44,7 +44,8 @@ usage: |-
       module "keypair" {
         source          = "clouddrove/keypair/aws"
         version         = "1.3.0"
-        enable_key_pair = true
-        public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ"
+        public_key                 = ""
+        create_private_key_enabled = true
+        enable_key_pair            = true
       }
   ```

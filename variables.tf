@@ -42,19 +42,12 @@ variable "managedby" {
   description = "ManagedBy, eg 'CloudDrove'."
 }
 
-#Module      : KEY PAIR
-#Description : Terraform module key pair variables.
+#Module      : KEY PAIR module variables.
 variable "public_key" {
   type        = string
   default     = ""
   description = "Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`)."
   sensitive   = true
-}
-
-variable "key_path" {
-  type        = string
-  default     = ""
-  description = "Name  (e.g. `~/.ssh/id_rsa.pub`)."
 }
 
 variable "key_name" {
@@ -67,4 +60,22 @@ variable "enable_key_pair" {
   type        = bool
   default     = true
   description = "A boolean flag to enable/disable key pair."
+}
+
+#      : PRIVATE KEY
+variable "create_private_key_enabled" {
+  type        = bool
+  default     = false
+  description = "Determines whether a private key will be created"
+}
+variable "private_key_algorithm" {
+  type        = string
+  default     = "RSA"
+  description = "Name of the algorithm to use when generating the private key. Currently-supported values are `RSA` and `ED25519`"
+}
+
+variable "private_key_rsa_bits" {
+  type        = number
+  default     = 4096
+  description = "When algorithm is `RSA`, the size of the generated RSA key, in bits (default: `4096`)"
 }
