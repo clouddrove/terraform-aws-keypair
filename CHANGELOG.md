@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2023-06-14
+### :sparkles: New Features
+- [`cc88c9b`](https://github.com/clouddrove/terraform-aws-keypair/commit/cc88c9b6977d39dfe9a8c9cce5b996b543ce7bd0) - updated changelog.yml file *(commit by [@vibhutigoyal](https://github.com/vibhutigoyal))*
+- [`e6e966d`](https://github.com/clouddrove/terraform-aws-keypair/commit/e6e966d7bca024d3cebcb1704f7ce4f329f5b3a5) - add deepsource & added assignees,reviewer in dependabot *(commit by [@Tanveer143s](https://github.com/Tanveer143s))*
+- [`d61f81a`](https://github.com/clouddrove/terraform-aws-keypair/commit/d61f81aa5582f63f711af5809f732df0f6c76672) - update readme.yaml and version.tf *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+- [`bbf09d3`](https://github.com/clouddrove/terraform-aws-keypair/commit/bbf09d3de8fd07f6e734a2532bdc654bfbaa9054) - update readme.yaml and version.tf *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+- [`c49f202`](https://github.com/clouddrove/terraform-aws-keypair/commit/c49f202762fbb57c902a7723e9763d0504c3290a) - added resource *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+- [`7dd81c4`](https://github.com/clouddrove/terraform-aws-keypair/commit/7dd81c4b74a0fcf1ad59472c9b72cbeeef698465) - added resource *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+- [`400c86e`](https://github.com/clouddrove/terraform-aws-keypair/commit/400c86e72915442a816e3c20dc4aad4dc1585cc5) - added resource *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+- [`5aad5b1`](https://github.com/clouddrove/terraform-aws-keypair/commit/5aad5b1afcde1f6502f3f0593ad97e13b3c627e9) - changes module description *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
+
+
 ## [v1.3.0] - 2022-12-30
 ### :bug: Bug Fixes
 - [`a7e8818`](https://github.com/clouddrove/terraform-aws-keypair/commit/a7e8818d098b5da9c56f5a5fc38a01a938e38d6d) - update workflows.
@@ -78,3 +90,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.15.0]: https://github.com/clouddrove/terraform-aws-keypair/compare/0.14.0...0.15.0
 [v1.0.1]: https://github.com/clouddrove/terraform-aws-keypair/compare/0.15.0...1.0.1
 [v1.3.0]: https://github.com/clouddrove/terraform-aws-keypair/compare/1.0.1...1.3.0
+[1.3.1]: https://github.com/clouddrove/terraform-aws-keypair/compare/1.3.0...1.3.1
