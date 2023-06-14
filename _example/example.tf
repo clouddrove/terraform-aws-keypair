@@ -7,14 +7,14 @@ provider "aws" {
 
 ####----------------------------------------------------------------------------------
 ##  Module      : KEY PAIR
-## Provider block added, Use the Amazon Web Services (AWS) provider to interact with the many resources supported by AWS.
+## Terraform module for generating or importing an SSH public key file into AWS.
 ####----------------------------------------------------------------------------------
 module "keypair" {
   source = "./../"
 
-  name                       = "key"
-  environment                = "test"
-  label_order                = ["environment", "name"]
+  name        = "key"
+  environment = "test"
+  label_order = ["environment", "name"]
 
   public_key                 = ""
   create_private_key_enabled = true
