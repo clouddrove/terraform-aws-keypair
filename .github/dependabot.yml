@@ -26,8 +26,11 @@ updates:
     # Add reviewer
     reviewers:
       - "approvers"
+    # Allow up to 3 open pull requests for pip dependencies
+    open-pull-requests-limit: 3
+
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "_example/" # Location of package manifests
+    directory: "/_example/" # Location of package manifests
     schedule:
       interval: "weekly"
     # Add assignees
