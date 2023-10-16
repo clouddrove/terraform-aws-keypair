@@ -10,13 +10,13 @@ provider "aws" {
 ## Terraform module for generating or importing an SSH public key file into AWS.
 ####----------------------------------------------------------------------------------
 module "keypair" {
-  source = "./../"
+  source = "../"
 
   name        = "key"
   environment = "test"
   label_order = ["environment", "name"]
 
-  public_key                 = ""
-  create_private_key_enabled = true
-  enable_key_pair            = true
+  public_key         = "XXXXXXXXXXXXXX"
+  enable_private_key = true
+  enable_key_pair    = true
 }

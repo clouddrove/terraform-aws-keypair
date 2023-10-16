@@ -50,12 +50,6 @@ variable "public_key" {
   sensitive   = true
 }
 
-variable "key_name" {
-  type        = string
-  default     = ""
-  description = "Name  (e.g. `it-admin` or `devops`)."
-}
-
 variable "enable_key_pair" {
   type        = bool
   default     = true
@@ -63,7 +57,7 @@ variable "enable_key_pair" {
 }
 
 #      : PRIVATE KEY
-variable "create_private_key_enabled" {
+variable "enable_private_key" {
   type        = bool
   default     = false
   description = "Determines whether a private key will be created"

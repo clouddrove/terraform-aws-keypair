@@ -31,7 +31,7 @@ resource "aws_key_pair" "default" {
 ##----------------------------------------------------------------------------------
 
 resource "tls_private_key" "default" {
-  count = var.enable_key_pair && var.create_private_key_enabled ? 1 : 0
+  count = var.enable_key_pair && var.enable_private_key ? 1 : 0
 
   algorithm = var.private_key_algorithm
   rsa_bits  = var.private_key_rsa_bits
