@@ -24,4 +24,3 @@
 | private\_key\_id | Unique identifier for this resource: hexadecimal representation of the SHA1 checksum of the resource |
 | public\_key\_openssh | The public key data in "Authorized Keys" format. This is populated only if the configured private key is supported: this includes all `RSA` and `ED25519` keys |
 | public\_key\_pem | Public key data in PEM (RFC 1421) format |
-
