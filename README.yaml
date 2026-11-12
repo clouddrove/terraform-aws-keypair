@@ -31,12 +31,12 @@ badges:
 prerequesties:
   - name: Terraform
     url: https://learn.hashicorp.com/terraform/getting-started/install.html
-    version: ">= 1.6.6"
+    version: ">= 1.11.0"
 
 providers:
   - name: aws
     url: https://aws.amazon.com/
-    version: ">= 5.31.0"
+    version: ">= 5.100.0, < 7.0.0"
 
 module_dependencies:
   - name: Labels Module
@@ -50,13 +50,30 @@ description: |-
 # yamllint disable rule:line-length
 usage: |-
   ### Simple Example
-  Here is an example of how you can use this module in your inventory structure:
+  Leave `public_key` empty and the module generates the key pair; set it to import your own key instead.
   ```hcl
       module "keypair" {
-        source          = "clouddrove/keypair/aws"
-        version         = "1.3.0"
-        public_key                 = ""
-        create_private_key_enabled = true
-        enable_key_pair            = true
+        source  = "clouddrove/keypair/aws"
+        version = "<release>"
+
+        name        = "app"
+        environment = "dev"
+
+        # ""  = auto-generate the key pair
+        # or  = file("~/.ssh/id_ed25519.pub") to import your own public key
+        public_key = ""
       }
   ```
+  A generated private key is stored **unencrypted in the Terraform state** (a `tls_private_key` limitation), so use an
+  encrypted, access-restricted backend. It is available as the sensitive `private_key_base64` output:
+  ```sh
+      terraform output -raw private_key_base64 | base64 -d > app.pem && chmod 600 app.pem
+  ```
+  Base64 is only encoding, not encryption. For production prefer importing your own public key, or set
+  `private_key_store = "ssm"` / `"secretsmanager"` (with `kms_key_id`) to keep a KMS-encrypted copy.
+
+  ### Upgrading from 1.x
+  - `enable_private_key` is deprecated and ignored: a key is generated whenever `public_key` is empty.
+  - Passing both `public_key` and `enable_private_key = true` no longer creates an unused `tls_private_key` (it is removed from state, nothing changes in AWS).
+  - `public_key_openssh` now returns the key registered in AWS (generated or supplied).
+  - Requires Terraform >= 1.11 and AWS provider >= 5.100 (write-only arguments).

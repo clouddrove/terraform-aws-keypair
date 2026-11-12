@@ -1,5 +1,8 @@
 name: tfsec
-permissions: write-all
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
 on:
   pull_request:
     paths:
